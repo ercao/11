@@ -1,3 +1,0 @@
-/home/data/codes/university/cpp/mst/build/CMakeFiles/rebuild_cache.dir
-/home/data/codes/university/cpp/mst/build/CMakeFiles/edit_cache.dir
-/home/data/codes/university/cpp/mst/build/CMakeFiles/mst.dir
