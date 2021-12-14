@@ -3,9 +3,9 @@
 //
 #ifndef MST_INCLUDE_HEAP_H_
 #define MST_INCLUDE_HEAP_H_
-#include <vector>
 #include <functional>
 #include <memory>
+#include <vector>
 
 using namespace std;
 
@@ -13,19 +13,20 @@ using namespace std;
  * 堆结构 (内部使用动态数组实现)
  * @tparam E 元素类型，可以为任意类型(自定义类型需要传入 Comparator 比较器)
  */
-template<typename E>
-class Heap {
- public:
+template <typename E> class Heap {
+public:
   /**
    * 比较器类型
    */
   typedef function<int(const E &, const E &)> Comparator;
- public:
+
+public:
   explicit Heap(const Comparator &comparator = nullptr) noexcept;
-  explicit Heap(const vector<E> &elements, const Comparator &comparator = nullptr) noexcept;
+  explicit Heap(const vector<E> &elements,
+                const Comparator &comparator = nullptr) noexcept;
   ~Heap() noexcept;
 
- public:
+public:
   [[nodiscard]] size_t size() const noexcept { return elements_->size(); }
   [[nodiscard]] bool empty() const noexcept { return elements_->empty(); }
 
@@ -54,8 +55,8 @@ class Heap {
    * 清空所有元素
    */
   Heap &clear() noexcept;
- private:
 
+private:
   /**
    * 比较 两元素：
    *    1. 自定义类型使用comparator_比较器
@@ -85,7 +86,8 @@ class Heap {
    * 构建堆
    */
   void heapify() noexcept;
- private:
+
+private:
   /**
    * 使用动态数组存储所有元素
    */
@@ -96,32 +98,29 @@ class Heap {
   const Comparator &comparator_;
 };
 
-template<typename E>
-Heap<E>::Heap(const Comparator &comparator) noexcept :comparator_(comparator) {}
+template <typename E>
+Heap<E>::Heap(const Comparator &comparator) noexcept
+    : comparator_(comparator) {}
 
-template<typename E>
+template <typename E>
 Heap<E>::Heap(const vector<E> &elements, const Comparator &comparator) noexcept
     : elements_(elements), comparator_(comparator) {
   heapify();
 }
-template<typename E>
-Heap<E>::~Heap() noexcept = default;
+template <typename E> Heap<E>::~Heap() noexcept = default;
 
-template<typename E>
-Heap<E> &Heap<E>::add(const E &element) noexcept {
+template <typename E> Heap<E> &Heap<E>::add(const E &element) noexcept {
   elements_->push_back(element);
   shiftUp(size() - 1);
   return *this;
 }
 
-template<typename E>
-E Heap<E>::get() const {
+template <typename E> E Heap<E>::get() const {
   checkRange();
   return elements_->at(0);
 }
 
-template<typename E>
-E Heap<E>::replace(const E &element) {
+template <typename E> E Heap<E>::replace(const E &element) {
   checkRange();
   E old_element = elements_->at(0);
   elements_->at(0) = element;
@@ -129,8 +128,7 @@ E Heap<E>::replace(const E &element) {
   return old_element;
 }
 
-template<typename E>
-E Heap<E>::remove() {
+template <typename E> E Heap<E>::remove() {
   checkRange();
 
   E old_element = elements_->at(0);
@@ -140,13 +138,12 @@ E Heap<E>::remove() {
   return old_element;
 }
 
-template<typename E>
-Heap<E> &Heap<E>::clear() noexcept {
+template <typename E> Heap<E> &Heap<E>::clear() noexcept {
   elements_->clear();
   return *this;
 }
 
-template<typename E>
+template <typename E>
 int Heap<E>::compare(const E &a1, const E &a2) const noexcept {
   // 自定义类型
   if (comparator_ != nullptr) {
@@ -162,14 +159,14 @@ int Heap<E>::compare(const E &a1, const E &a2) const noexcept {
   return 0;
 }
 
-template<typename E>
-void Heap<E>::shiftUp(size_t index) noexcept {
+template <typename E> void Heap<E>::shiftUp(size_t index) noexcept {
   const E child = elements_->at(index);
 
   while (index > 0) {
     size_t parent_index = (index - 1) >> 1;
     const E parent = elements_->at(parent_index);
-    if (compare(parent, child) <= 0) break;
+    if (compare(parent, child) <= 0)
+      break;
 
     elements_->at(index) = parent;
     index = parent_index;
@@ -177,20 +174,22 @@ void Heap<E>::shiftUp(size_t index) noexcept {
   elements_->at(index) = child;
 }
 
-template<typename E>
-void Heap<E>::shiftDown(size_t index) noexcept {
-  if (size() <= 1) return;
+template <typename E> void Heap<E>::shiftDown(size_t index) noexcept {
+  if (size() <= 1)
+    return;
   const E parent = elements_->at(index);
 
   size_t half_index = (size() >> 1) - 1;
   while (index <= half_index) {
     size_t child_index = (index << 1) | 1;
-    if (child_index + 1 < size() && compare(elements_->at(child_index + 1), elements_->at(child_index)) < 0)
+    if (child_index + 1 < size() &&
+        compare(elements_->at(child_index + 1), elements_->at(child_index)) < 0)
       ++child_index;
 
     const E child = elements_->at(child_index);
 
-    if (compare(parent, child) <= 0) break;
+    if (compare(parent, child) <= 0)
+      break;
 
     elements_->at(index) = child;
     index = child_index;
@@ -199,14 +198,14 @@ void Heap<E>::shiftDown(size_t index) noexcept {
   elements_->at(index) = parent;
 }
 
-template<typename E>
-void Heap<E>::heapify() noexcept {
-  for (size_t index = (size() - 1) >> 1; index >= 0; --index) shiftDown(index);
+template <typename E> void Heap<E>::heapify() noexcept {
+  for (size_t index = (size() - 1) >> 1; index >= 0; --index)
+    shiftDown(index);
 }
 
-template<typename E>
-void Heap<E>::checkRange() const {
-  if (elements_->empty()) throw out_of_range("the heap is empty!");
+template <typename E> void Heap<E>::checkRange() const {
+  if (elements_->empty())
+    throw out_of_range("the heap is empty!");
 }
 
-#endif //MST_INCLUDE_HEAP_H_
+#endif // MST_INCLUDE_HEAP_H_

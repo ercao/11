@@ -1,0 +1,109 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/include",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/include",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/include-fixed",
+						"/nix/store/7rfaw11na5ajdgwr55ffzwfibbrdpk8z-glibc-2.33-56-dev/include"
+					],
+					"linkDirectories" : 
+					[
+						"/nix/store/z56jcx3j1gfyk4sv7g8iaan0ssbdkhz1-glibc-2.33-56/lib",
+						"/nix/store/c9f15p1kwm0mw5p13wsnvd1ixrhbhb12-gcc-10.3.0-lib/lib",
+						"/nix/store/da9l6ifizmh883j94gzx5n51h8lrrp00-gcc-wrapper-10.3.0/bin",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib64",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"gcc",
+						"gcc_s",
+						"c",
+						"gcc",
+						"gcc_s"
+					]
+				},
+				"path" : "/etc/profiles/per-user/ercao/bin/gcc",
+				"version" : "10.3.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/include/c++/10.3.0",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/include/c++/10.3.0/backward",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/include",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/include",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/include-fixed",
+						"/nix/store/7rfaw11na5ajdgwr55ffzwfibbrdpk8z-glibc-2.33-56-dev/include"
+					],
+					"linkDirectories" : 
+					[
+						"/nix/store/z56jcx3j1gfyk4sv7g8iaan0ssbdkhz1-glibc-2.33-56/lib",
+						"/nix/store/c9f15p1kwm0mw5p13wsnvd1ixrhbhb12-gcc-10.3.0-lib/lib",
+						"/nix/store/da9l6ifizmh883j94gzx5n51h8lrrp00-gcc-wrapper-10.3.0/bin",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib64",
+						"/nix/store/h6d0c7lnxx65i925xmnxgwdfdvc7hc2p-gcc-10.3.0/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"m",
+						"gcc_s",
+						"gcc",
+						"c",
+						"gcc_s",
+						"gcc"
+					]
+				},
+				"path" : "/etc/profiles/per-user/ercao/bin/g++",
+				"version" : "10.3.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

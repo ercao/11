@@ -1,5 +1,5 @@
-#include <iostream>
 #include "./include/graph.h"
+#include <iostream>
 
 using namespace std;
 
@@ -30,9 +30,19 @@ int main() {
   std::cout << graph << endl;
 
   /////// 最小生成树
-  auto edge_info = *graph.mst();
-  for (auto &edge: edge_info) {
-    cout << "(" << edge->from << "->" << edge->to << ", " << edge->weight << ")";
+  auto edge_info = *graph.mst(Graph<std::string, int>::MST_TYPE::PRIM);
+  cout << "[ ";
+  for (auto &edge : edge_info) {
+    cout << "(" << edge->from << "->" << edge->to << ", " << edge->weight << ")"
+         << ' ';
   }
+  cout << "]" << endl;
+  edge_info = *graph.mst(Graph<std::string, int>::MST_TYPE::KRUSKAL);
+  cout << "[ ";
+  for (auto &edge : edge_info) {
+    cout << "(" << edge->from << "->" << edge->to << ", " << edge->weight << ")"
+         << ' ';
+  }
+  cout << "]" << endl;
   return 0;
 }

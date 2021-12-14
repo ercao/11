@@ -1,0 +1,11 @@
+{
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "files.associations": {
+    "*.h": "c",
+    "string_view": "c",
+    "array": "c",
+    "initializer_list": "c",
+    "ranges": "c",
+    "utility": "c"
+  }
+}

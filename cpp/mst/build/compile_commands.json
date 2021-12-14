@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/data/codes/university/cpp/mst/build",
+  "command": "/etc/profiles/per-user/ercao/bin/g++   -g -std=gnu++2a -o CMakeFiles/mst.dir/main.cc.o -c /home/data/codes/university/cpp/mst/main.cc",
+  "file": "/home/data/codes/university/cpp/mst/main.cc"
+},
+{
+  "directory": "/home/data/codes/university/cpp/mst/build",
+  "command": "/etc/profiles/per-user/ercao/bin/g++   -g -std=gnu++2a -o CMakeFiles/mst.dir/test/test.cc.o -c /home/data/codes/university/cpp/mst/test/test.cc",
+  "file": "/home/data/codes/university/cpp/mst/test/test.cc"
+}
+]

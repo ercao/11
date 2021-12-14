@@ -1,0 +1,1 @@
+/etc/profiles/per-user/ercao/bin/g++ -g CMakeFiles/mst.dir/main.cc.o CMakeFiles/mst.dir/test/test.cc.o -o mst 
