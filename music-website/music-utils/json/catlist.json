@@ -1,0 +1,31 @@
+{
+  "code": 200,
+  "all": {
+    "name": "全部歌单",
+    "resourceCount": 1000,
+    "imgId": 0,
+    "imgUrl": null,
+    "type": 0,
+    "category": 4,
+    "resourceType": 0,
+    "hot": false,
+    "activity": false
+  },
+  "sub": [
+    {
+      "name": "综艺",
+      "resourceCount": 638,
+      "imgId": 0,
+      "imgUrl": null,
+      "type": 0,
+      "category": 4,
+      "resourceType": 0,
+      "hot": true,
+      "activity": false
+    }
+  ],
+  "categories": {
+    "0": "语种"
+  }
+}
+

@@ -1,0 +1,28 @@
+{
+  "name": "music-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "dependencies": {
+    "@types/uuid": "^8.3.4",
+    "date-fns": "^2.28.0",
+    "NeteaseCloudMusicApi": "^4.6.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.2",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^2.7.0"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
