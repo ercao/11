@@ -7,3 +7,4 @@
 | `ds`            | 数据结构与算法(大二上)   | `C`                                | 数据结构课设计       |
 | `book-ms-web`   | 数据库(大二下)           | `typescript`                       | 简易图书信息管理     |
 | `music-website` | java web(大二下)         | `java`、`typescript`、`javascript` | 简易在线音乐播放网站 |
+| `pra`           | 操作系统(大三下)         | `typescript`                       | 页面置换算法模拟     |
