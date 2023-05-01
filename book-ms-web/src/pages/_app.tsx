@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { FunctionComponent } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import '../style/theme.css'
+import 'antd/dist/antd.css'
 
 const Header = () => {
   const { pathname } = useRouter()
