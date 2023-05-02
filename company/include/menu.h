@@ -3,6 +3,8 @@
 #include "service.h"
 #include "print.h"
 
+#include <climits>
+
 class Menu final {
 public:
 	void stage();

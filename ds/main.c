@@ -127,7 +127,7 @@ void test_mirros(void) {
   putchar('\n');
 
   printf("%-40s", "traversal through preorder: ");
-  morris_pre(nodes[0], print);
+  morris_prev(nodes[0], print);
   putchar('\n');
   printf("%-40s", "traversal through inorder: ");
   morris_in(nodes[0], print);

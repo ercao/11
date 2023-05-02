@@ -40,7 +40,7 @@ void morris(struct tree_node *node, callback fun) {
   }
 }
 
-void morris_pre(struct tree_node *node, callback fun) {
+void morris_prev(struct tree_node *node, callback fun) {
 
   if (NULL == node) {
     return;

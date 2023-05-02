@@ -2,8 +2,8 @@
 #define __SERVICE_H__
 #include "dao.h"
 #include <fstream>
-#include "json.hpp"
-#include <Windows.h>
+#include <climits>
+#include <nlohmann/json.hpp>
 
 class Service {
 protected:

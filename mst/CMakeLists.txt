@@ -5,7 +5,14 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(mst
         main.cc
-        include/graph.h
-        include/heap.h
-        include/dsu.h
-        test/test.cc test/test.h)
+        test/test.cc 
+)
+
+target_include_directories(mst
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+        ./test/
+)
+
+install(TARGETS mst)
+

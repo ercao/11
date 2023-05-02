@@ -1,7 +1,6 @@
 ﻿#ifndef __UTIL_H__
 #define __UTIL_H__
 #include <string>
-#include <Windows.h>
 
 #pragma warning(disable:26451)
 /**
@@ -38,38 +37,11 @@ public:
 	 * @return
 	*/
 	static std::string string_to_utf8(const std::string &str) {
-		int nwLen = ::MultiByteToWideChar(CP_ACP, 0, str.c_str(), -1, NULL, 0);
-		wchar_t *pwBuf = new wchar_t[nwLen + 1];// 一定要加 1，不然会出现尾巴  
-		ZeroMemory(pwBuf, nwLen * 2 + 2);
-		::MultiByteToWideChar(CP_ACP, 0, str.c_str(), static_cast<int> (str.length()), pwBuf, nwLen);
-		int nLen = ::WideCharToMultiByte(CP_UTF8, 0, pwBuf, -1, NULL, NULL, NULL, NULL);
-		char *pBuf = new char[nLen + 1];
-		ZeroMemory(pBuf, nLen + 1);
-
-		::WideCharToMultiByte(CP_UTF8, 0, pwBuf, nwLen, pBuf, nLen, NULL, NULL);
-		std::string retStr(pBuf);
-		delete[]pwBuf;
-		delete[]pBuf;
-		pwBuf = NULL;
-		pBuf = NULL;
-		return retStr;
+		return str;
 	}
 
 	static std::string utf8_to_string(const std::string &str) {
-		int nwLen = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, NULL, 0);
-		wchar_t *pwBuf = new wchar_t[nwLen + 1];// 一定要加 1，不然会出现尾巴  
-		memset(pwBuf, 0, nwLen * 2 + 2);
-		MultiByteToWideChar(CP_UTF8, 0, str.c_str(), static_cast<int>(str.length()), pwBuf, nwLen);
-		int nLen = WideCharToMultiByte(CP_ACP, 0, pwBuf, -1, NULL, NULL, NULL, NULL);
-		char *pBuf = new char[nLen + 1];
-		memset(pBuf, 0, nLen + 1);
-		WideCharToMultiByte(CP_ACP, 0, pwBuf, nwLen, pBuf, nLen, NULL, NULL);
-		std::string retStr = pBuf;
-		delete[]pBuf;
-		delete[]pwBuf;
-		pBuf = NULL;
-		pwBuf = NULL;
-		return retStr;
+		return str;
 	}
 };
 #endif // !__UTIL_H__
