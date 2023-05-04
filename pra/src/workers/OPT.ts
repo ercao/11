@@ -11,6 +11,18 @@ import { parentPort } from 'worker_threads'
 parentPort?.on('message', <T>(req: RequestType<T>) => {
   const res: ResponseType<T>['res'] = []
 
+  // index Map 记录每一页在未来请求序列中的下标
+  const indexMap = new Map<T, { index: number; indices: number[] }>()
+  req.pages.forEach((page, i) => {
+    const index = indexMap.get(page)
+    if (index !== undefined) {
+      index.indices.push(i)
+    } else {
+      indexMap.set(page, { index: 1, indices: [i] })
+    }
+  })
+  indexMap.forEach(({ indices }) => indices.push(Infinity))
+
   if (req.capacity > 0) {
     const heapPlus = new HeapPlus<
       { page: T; lessRight: number; time: number },
@@ -29,8 +41,8 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
       let flag = false
 
       const page = req.pages[i]
-      let lessRight = req.pages.indexOf(page, i + 1) // O(n)
-      lessRight = lessRight === -1 ? Infinity : lessRight
+      const indices = indexMap.get(page)!
+      const lessRight = indices.indices[indices.index++]
 
       const index = heapPlus.indexOf(page)
       if (index === undefined) {

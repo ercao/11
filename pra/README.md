@@ -4,7 +4,7 @@
 
 ### 最佳置换算法 `src/workers/OPT.ts`
 
-HeapPlus
+HashMap + HeapPlus
 
 ### 先进先出算法 `src/workers/FIFO.ts`
 
