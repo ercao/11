@@ -32,17 +32,18 @@ for (const worker of workers) {
       })
     )
     console.log('最大容量: ', inspect(req.capacity))
-    if (res.length < 1) return
+    if (res.length > 0) {
+      console.table(
+        res.map((line) => ({
+          请求页: line.request,
+          ...line.pages,
+          是否缺页: line.flag,
+        }))
+      )
 
-    console.table(
-      res.map((line) => ({
-        请求页: line.request,
-        ...line.pages,
-        是否缺页: line.flag,
-      }))
-    )
+      console.log()
+    }
 
-    console.log()
     worker.terminate()
   })
 }
