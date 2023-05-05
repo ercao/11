@@ -32,7 +32,14 @@ for (const worker of workers) {
       })
     )
     console.log('最大容量: ', inspect(req.capacity))
+
     if (res.length > 0) {
+      console.log(
+        '缺页率: ',
+        inspect(
+          res.reduce((prev, cur) => prev + Number(cur.flag), 0) / res.length
+        )
+      )
       console.table(
         res.map((line) => ({
           请求页: line.request,
@@ -40,21 +47,19 @@ for (const worker of workers) {
           是否缺页: line.flag,
         }))
       )
-
-      console.log()
     }
-
+    console.log()
     worker.terminate()
   })
 }
 
 // 随机生成
-const [min, max, maxLength] = [0, 8, 20]
-const pages = genArray(min, max, maxLength)
-const capacity = randomInt(0, pages.length + 1)
+// const [min, max, maxLength] = [0, 8, 20]
+// const pages = genArray(min, max, maxLength)
+// const capacity = randomInt(0, pages.length + 1)
 
-// const pages = [8, 1, 2, 3, 1, 4, 1, 5, 3, 4, 1, 4, 3, 2, 3, 1, 2, 8, 1, 2]
-// const capacity = 3
+const pages = [8, 1, 2, 3, 1, 4, 1, 5, 3, 4, 1, 4, 3, 2, 3, 1, 2, 8, 1, 2]
+const capacity = 3
 
 for (const worker of workers) {
   worker.postMessage({ pages, capacity })

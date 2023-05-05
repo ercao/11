@@ -61,32 +61,32 @@ export class LFU<T> {
     if (!node) {
       if (this._size >= this._capacity) {
         // 换出
-        const lastList = this._tail.prev as DoublyLinkedList<T>
-        this._cache.delete(lastList.removeFirstNode())
+        const firstList = this._head.next as DoublyLinkedList<T>
+        this._cache.delete(firstList.removeFirstNode())
 
         --this._size
-        this.checkAndRemoveEmptyList(lastList)
+        this.checkAndRemoveEmptyList(firstList)
       }
 
       // 添加
-      let lastList = this._tail.prev as DoublyLinkedList<T>
-      if (this._size < 1 || lastList.freq > 1) {
-        lastList = this.addDoublyLinkedList(1, lastList, this._tail)
+      let firstList = this._head.next as DoublyLinkedList<T>
+      if (this._size < 1 || firstList.freq > 1) {
+        firstList = this.addDoublyLinkedList(1, this._head, firstList)
       }
 
-      this._cache.set(page, lastList.addLastNode(page))
+      this._cache.set(page, firstList.addLastNode(page))
       ++this._size
 
       return true
     } else {
       // 存在这个节点需要增加频率
       const list = node.list
-      let prevList = list.prev
+      let nextList = list.next
 
-      if (prevList === this._head || prevList.freq > list.freq + 1) {
-        prevList = this.addDoublyLinkedList(list.freq + 1, prevList, list)
+      if (nextList === this._tail || nextList.freq > list.freq + 1) {
+        nextList = this.addDoublyLinkedList(list.freq + 1, list, nextList)
       }
-      this._cache.set(page, prevList.addLastNode(page))
+      this._cache.set(page, nextList.addLastNode(page))
 
       list.removeNode(node)
       this.checkAndRemoveEmptyList(list)

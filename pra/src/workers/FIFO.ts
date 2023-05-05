@@ -14,7 +14,7 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
     for (const page of req.pages) {
       const flag = fifo.put(page)
 
-      res.push({ request: page, pages: fifo['_pages'].slice(), flag })
+      res.push({ request: page, pages: fifo.toArray(), flag })
     }
   }
 
@@ -27,10 +27,13 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
 export class FIFO<T> {
   // 页号数组
   private _cache = new Set<T>()
-  private _pages: T[]
+  private _head: any = {}
+  private _tail: any = {}
+  private _size = 0
 
   constructor(private _capacity: number = 10) {
-    this._pages = new Array()
+    this._head.next = this._tail
+    this._tail.prev = this._head
   }
 
   /**
@@ -44,11 +47,45 @@ export class FIFO<T> {
       return false
     }
 
-    if (this._pages.length >= this._capacity) {
-      this._cache.delete(this._pages.shift()!)
+    if (this._size >= this._capacity) {
+      // 删除头节点
+      const node = this._head.next as Node<T>
+      node.next.prev = this._head
+      this._head.next = node.next
+
+      this._cache.delete(node.page)
+    } else {
+      ++this._size
     }
-    this._pages.push(page)
+
     this._cache.add(page)
+
+    // 添加到结尾
+    const newNode = new Node(page, this._tail.prev, this._tail)
+    this._tail.prev.next = newNode
+    this._tail.prev = newNode
+
     return true
   }
+
+  public toArray(): T[] {
+    const pages: T[] = []
+    let node = this._head.next as Node<T>
+
+    while (node !== this._tail) {
+      pages.push(node.page)
+      node = node.next
+    }
+
+    return pages
+  }
+}
+
+/** 链表节点 */
+class Node<T> {
+  public constructor(
+    public page: T,
+    public prev: Node<T>,
+    public next: Node<T>
+  ) {}
 }
