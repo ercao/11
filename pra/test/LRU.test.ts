@@ -1,8 +1,8 @@
 import { randomInt } from 'crypto'
 import { times } from 'moderndash'
-import { LRU } from 'src/workers/LRU.ts'
-import { HeapPlus } from 'src/heapPlus.ts'
+import { HeapPlus } from 'src/HeapPlus.ts'
 import { compare, genArray } from 'src/utils.ts'
+import { LRU } from 'src/workers/LRU.ts'
 
 /** 使用加强堆 */
 class Right {

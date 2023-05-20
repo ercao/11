@@ -4,7 +4,7 @@
 // 需要知道未来的页面请求序列
 //
 
-import { HeapPlus } from '../heapPlus.ts'
+import { HeapPlus } from '../HeapPlus.ts'
 import { RequestType, ResponseType, compare } from '../utils.ts'
 import { parentPort } from 'worker_threads'
 
@@ -12,16 +12,22 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
   const res: ResponseType<T>['res'] = []
 
   // index Map 记录每一页在未来请求序列中的下标
-  const indexMap = new Map<T, { index: number; indices: number[] }>()
+  //
+  // 每个页面的第一次出现的位置永远不用用到, indices第一个位置`另作他用
+  //
+  const indexMap = new Map<T, number[]>()
   req.pages.forEach((page, i) => {
-    const index = indexMap.get(page)
-    if (index !== undefined) {
-      index.indices.push(i)
+    const indices = indexMap.get(page)
+    if (indices !== undefined) {
+      indices.push(i)
     } else {
-      indexMap.set(page, { index: 1, indices: [i] })
+      indexMap.set(page, [i])
     }
   })
-  indexMap.forEach(({ indices }) => indices.push(Infinity))
+  indexMap.forEach((indices) => {
+    indices[0] = 1
+    indices.push(Infinity)
+  })
 
   if (req.capacity > 0) {
     const heapPlus = new HeapPlus<
@@ -38,20 +44,22 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
     let time = 0
 
     for (let i = 0; i < req.pages.length; ++i) {
+      let swap: T | undefined
       let flag = false
 
       const page = req.pages[i]
       const indices = indexMap.get(page)!
-      const lessRight = indices.indices[indices.index++]
+      const lessRight = indices[indices[0]++]
 
       const index = heapPlus.indexOf(page)
       if (index === undefined) {
+        swap = undefined
         flag = true
 
         // 是否需要换出
         if (heapPlus.length >= req.capacity) {
           // O(log(Capacity))
-          heapPlus.remove(0)
+          swap = heapPlus.remove(0).page
         }
 
         // 寻找最近的
@@ -64,6 +72,7 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
       res.push({
         request: page,
         pages: [...heapPlus['_elements'].map((elem) => elem.page)],
+        swap,
         flag,
       })
     }

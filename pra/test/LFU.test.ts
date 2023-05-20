@@ -1,7 +1,7 @@
 import { randomInt } from 'crypto'
 import { times } from 'moderndash'
 import { LFU } from 'src/workers/LFU.ts'
-import { HeapPlus } from 'src/heapPlus.ts'
+import { HeapPlus } from 'src/HeapPlus.ts'
 import { compare, genArray } from 'src/utils.ts'
 
 /**
@@ -68,6 +68,7 @@ test('LFU 算法', () => {
 
     const lfu = new LFU(capacity)
     const lfu2 = new Right(capacity)
+
     for (let i = 0; i < pages.length; ++i) {
       lfu.put(pages[i])
       lfu2.put(pages[i])

@@ -2,34 +2,29 @@
 // 最少使用：淘汰一段时间内，使用次数最少的页面
 //
 
-import { RequestType, ResponseType } from 'src/utils.ts'
+import { Strategy } from '../Strategy.ts'
+import { QUICK_TABLE_SIZE } from '../config.ts'
+import { QuickTable } from '../quickTable.ts'
+import { RequestType, run } from '../utils.ts'
 import { parentPort } from 'worker_threads'
 
 parentPort?.on('message', <T>(req: RequestType<T>) => {
-  const res: ResponseType<T>['res'] = []
-
-  if (req.capacity > 0) {
-    const lru = new LFU<T>(req.capacity)
-
-    for (const page of req.pages) {
-      const flag = lru.put(page)
-
-      res.push({
-        request: page,
-        pages: lru.toArray().map(({ page }) => page),
-        flag,
-      })
-    }
-  }
-
-  parentPort?.postMessage({ name: 'LFU 算法', req, res })
+  parentPort?.postMessage({
+    name: 'LFU 算法',
+    req,
+    ...run(
+      new LFU(req.capacity),
+      new QuickTable(new LFU(QUICK_TABLE_SIZE)),
+      req
+    ),
+  })
 })
 
 /**
  * 使用 一个 HashMap 和 一条双向链表
  * 双向链表的每一个节点节点 都是一条具有相同频率的页面节点
  */
-export class LFU<T> {
+export class LFU<T> implements Strategy<T> {
   private _cache = new Map<T, Node<T>>()
   private _head: any = {}
   private _tail: any = {}
@@ -40,9 +35,7 @@ export class LFU<T> {
     this._tail.prev = this._head
   }
 
-  /**
-   * 是否存在该页
-   */
+  /** 获取该页 */
   public get(page: T): { page: T; freq: number } | undefined {
     const node = this._cache.get(page)
     if (node === undefined) return undefined
@@ -50,19 +43,23 @@ export class LFU<T> {
     return { page: node.page, freq: node.list.freq }
   }
 
-  /**
-   * 访问一个新页面
-   * @returns 是否缺页
-   */
-  public put(page: T): boolean {
-    if (this._capacity < 1) return true
+  public contain(page: T): boolean {
+    return this._cache.has(page)
+  }
+
+  public put(page: T): { swap?: T; flag: boolean } {
+    let swap: T | undefined
+    let flag = true
+
+    if (this._capacity < 1) return { flag }
 
     let node = this._cache.get(page)
     if (!node) {
       if (this._size >= this._capacity) {
         // 换出
         const firstList = this._head.next as DoublyLinkedList<T>
-        this._cache.delete(firstList.removeFirstNode())
+        swap = firstList.removeFirstNode()
+        this._cache.delete(swap)
 
         --this._size
         this.checkAndRemoveEmptyList(firstList)
@@ -76,9 +73,9 @@ export class LFU<T> {
 
       this._cache.set(page, firstList.addLastNode(page))
       ++this._size
-
-      return true
     } else {
+      flag = false
+
       // 存在这个节点需要增加频率
       const list = node.list
       let nextList = list.next
@@ -90,21 +87,21 @@ export class LFU<T> {
 
       list.removeNode(node)
       this.checkAndRemoveEmptyList(list)
-
-      return false
     }
+
+    return { swap, flag }
   }
 
   /** 转换为数组 */
-  public toArray(): { page: T; freq: number }[] {
-    const pages: { page: T; freq: number }[] = []
+  public toArray(): T[] {
+    const pages: T[] = []
 
     let list = this._head.next as DoublyLinkedList<T>
 
     while (list !== this._tail) {
       let node = list.head.next as Node<T>
       while (node !== list.tail) {
-        pages.push({ page: node.page, freq: node.list.freq })
+        pages.push(node.page)
         node = node.next
       }
       list = list.next

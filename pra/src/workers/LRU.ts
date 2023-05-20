@@ -2,33 +2,28 @@
 // 最近最久未使用原则： 每次淘汰的页面是最久未使用的牙面
 //
 
-import { RequestType, ResponseType } from 'src/utils.ts'
+import { Strategy } from '../Strategy.ts'
+import { QUICK_TABLE_SIZE } from '../config.ts'
+import { QuickTable } from '../quickTable.ts'
+import { RequestType, run } from '../utils.ts'
 import { parentPort } from 'worker_threads'
 
 parentPort?.on('message', <T>(req: RequestType<T>) => {
-  const res: ResponseType<T>['res'] = []
-
-  if (req.capacity > 0) {
-    const lru = new LRU<T>(req.capacity)
-
-    for (const page of req.pages) {
-      const flag = lru.put(page)
-
-      res.push({
-        request: page,
-        pages: lru.toArray().map(({ page }) => page),
-        flag,
-      })
-    }
-  }
-
-  parentPort?.postMessage({ name: 'LRU 算法', req, res })
+  parentPort?.postMessage({
+    name: 'LRU 算法',
+    req,
+    ...run(
+      new LRU(req.capacity),
+      new QuickTable(new LRU(QUICK_TABLE_SIZE)),
+      req
+    ),
+  })
 })
 
 /**
  * HashMap 和 一条双向链表
  */
-export class LRU<T> {
+export class LRU<T> implements Strategy<T> {
   private _cache = new Map<T, Node<T>>()
 
   private _head: any = {}
@@ -49,12 +44,15 @@ export class LRU<T> {
     return this._cache.get(page) !== undefined
   }
 
-  /**
-   * 请求页
-   * @returns 是否缺页
-   */
-  public put(page: T): boolean {
-    if (this._capacity < 1) return true
+  public contain(page: T): boolean {
+    return this._cache.has(page)
+  }
+
+  public put(page: T): { swap?: T; flag: boolean } {
+    let swap: T | undefined
+    let flag = true
+
+    if (this._capacity < 1) return { flag }
 
     let node = this._cache.get(page)
 
@@ -69,13 +67,16 @@ export class LRU<T> {
 
       if (this._size > this._capacity) {
         // 删除第一个元素
-        this._cache.delete(this._head.next.page)
-        this._head.next.next.prev = this._head
-        this._head.next = this._head.next.next
-      }
+        const first = this._head.next as Node<T>
+        this._cache.delete(first.page)
+        first.next.prev = first.prev
+        this._head.next = first.next
 
-      return true
+        swap = first.page
+      }
     } else {
+      flag = false
+
       // 从链表中删除该元素
       node.next.prev = node.prev
       node.prev.next = node.next
@@ -86,17 +87,17 @@ export class LRU<T> {
       this._tail.prev.next = node
       this._tail.prev = node
       node.time = time
-
-      return false
     }
+
+    return { swap, flag }
   }
 
-  public toArray(): { page: T; time: number }[] {
-    const pages: { page: T; time: number }[] = []
+  public toArray(): T[] {
+    const pages: T[] = []
     let node = this._head.next as Node<T>
 
     while (node !== this._tail) {
-      pages.push({ page: node.page, time: node.time })
+      pages.push(node.page)
       node = node.next
     }
 

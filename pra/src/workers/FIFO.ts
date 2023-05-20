@@ -2,29 +2,28 @@
 // 先进先出算法：每次选择淘汰的页面是最早进入内存的页面
 //
 
-import { RequestType, ResponseType } from 'src/utils.ts'
+import { Strategy } from '..//Strategy.ts'
+import { QUICK_TABLE_SIZE } from '..//config.ts'
+import { QuickTable } from '../quickTable.ts'
+import { RequestType, run } from '../utils.ts'
 import { parentPort } from 'worker_threads'
 
 parentPort?.on('message', <T>(req: RequestType<T>) => {
-  const res: ResponseType<T>['res'] = []
-
-  if (req.capacity > 0) {
-    const fifo = new FIFO<T>(req.capacity)
-
-    for (const page of req.pages) {
-      const flag = fifo.put(page)
-
-      res.push({ request: page, pages: fifo.toArray(), flag })
-    }
-  }
-
-  parentPort?.postMessage({ name: 'FIFO 算法', req, res })
+  parentPort?.postMessage({
+    name: 'FIFO 算法',
+    req,
+    ...run(
+      new FIFO(req.capacity),
+      new QuickTable(new FIFO(QUICK_TABLE_SIZE)),
+      req
+    ),
+  })
 })
 
 /**
  * 使用队列实现
  */
-export class FIFO<T> {
+export class FIFO<T> implements Strategy<T> {
   // 页号数组
   private _cache = new Set<T>()
   private _head: any = {}
@@ -36,24 +35,29 @@ export class FIFO<T> {
     this._tail.prev = this._head
   }
 
-  /**
-   * 请求页面
-   * @returns 是否缺页
-   */
-  public put(page: T): boolean {
-    if (this._capacity < 1) return true
+  public contain(page: T): boolean {
+    return this._cache.has(page)
+  }
+
+  public put(page: T): { swap?: T; flag: boolean } {
+    let swap: T | undefined
+    let flag = true
+
+    if (this._capacity < 1) return { flag }
 
     if (this._cache.has(page)) {
-      return false
+      return { flag: false }
     }
 
     if (this._size >= this._capacity) {
       // 删除头节点
-      const node = this._head.next as Node<T>
-      node.next.prev = this._head
-      this._head.next = node.next
+      const first = this._head.next as Node<T>
+      first.next.prev = this._head
+      this._head.next = first.next
 
-      this._cache.delete(node.page)
+      this._cache.delete(first.page)
+
+      swap = first.page
     } else {
       ++this._size
     }
@@ -65,7 +69,7 @@ export class FIFO<T> {
     this._tail.prev.next = newNode
     this._tail.prev = newNode
 
-    return true
+    return { swap, flag }
   }
 
   public toArray(): T[] {
