@@ -6,7 +6,8 @@ static void swap(elem_type elems[], size_t first, size_t last) {
   elems[last] = temp;
 }
 
-static size_t partition(elem_type elems[], size_t begin, size_t end, comparator cmp) {
+static size_t partition(elem_type elems[], size_t begin, size_t end,
+                        comparator cmp) {
   // random position
   swap(elems, begin, begin + (size_t)(rand() % (end - begin)));
   elem_type povit = elems[begin];
@@ -51,7 +52,10 @@ void quicksort(elem_type elems[], size_t length, comparator cmp, callback fun) {
 
   qsortRecursion(sorted_elems, 0, length, cmp);
 
-  for (int i = 0; i < length; ++i) { // fun(elems[]);
+  for (int i = 0; i < length; ++i) {  // fun(elems[]);
     fun(sorted_elems[i]);
   }
+
+  free(sorted_elems);
+  sorted_elems = NULL;
 }

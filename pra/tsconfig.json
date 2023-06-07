@@ -5,6 +5,8 @@
   },
   "compilerOptions": {
     "target": "ESNext",
+    "baseUrl": ".",
+    "noEmit": true,
     "module": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

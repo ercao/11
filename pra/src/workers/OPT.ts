@@ -11,6 +11,8 @@ import { parentPort } from 'worker_threads'
 parentPort?.on('message', <T>(req: RequestType<T>) => {
   const res: ResponseType<T>['res'] = []
 
+  const startTime = Date.now()
+
   // index Map 记录每一页在未来请求序列中的下标
   //
   // 每个页面的第一次出现的位置永远不用用到, indices第一个位置`另作他用
@@ -78,5 +80,12 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
     }
   }
 
-  parentPort?.postMessage({ name: 'OPT 算法', req, res })
+  const endTime = Date.now()
+
+  parentPort?.postMessage({
+    name: 'OPT 算法',
+    req,
+    res,
+    ms: endTime - startTime,
+  })
 })

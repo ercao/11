@@ -15,6 +15,7 @@ export type ResponseType<T> = {
   hasQTTime: number
   nonQTTime: number
   res: { request: T; pages: T[]; swap?: T; flag: boolean }[]
+  ms: number
 }
 
 export type GenArray = (min: number, max: number, maxLength: number) => number[]
@@ -43,10 +44,12 @@ function run<T>(
   pageReplacement: Strategy<T>,
   quickTable: QuickTable<T>,
   req: RequestType<T> // 快表
-): Pick<ResponseType<T>, 'res' | 'hasQTTime' | 'nonQTTime'> {
+): Pick<ResponseType<T>, 'res' | 'hasQTTime' | 'nonQTTime' | 'ms'> {
   const res: ResponseType<T>['res'] = []
   let hasQTTime: number = 0
   let nonQTTime: number = 0
+
+  const startTime = Date.now()
 
   if (req.capacity > 0) {
     // 快表
@@ -79,7 +82,8 @@ function run<T>(
     }
   }
 
-  return { hasQTTime, nonQTTime, res }
+  const endTime = Date.now()
+  return { hasQTTime, nonQTTime, res, ms: endTime - startTime }
 }
 
 export { genArray, compare, run }
