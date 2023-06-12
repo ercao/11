@@ -2,6 +2,7 @@ import { randomInt } from 'crypto'
 import { times } from 'moderndash'
 import { HeapPlus } from 'src/HeapPlus.ts'
 import { compare, genArray } from 'src/utils.ts'
+import { FIFO } from 'src/workers/FIFO.ts'
 import { LRU } from 'src/workers/LRU.ts'
 
 /** 使用加强堆 */
@@ -31,39 +32,35 @@ class Right {
 
     const time = this._time++
 
-    if (index === undefined) {
-      if (this._heap.length >= this._capacity) {
-        this._heap.remove(0) // 删掉栈顶
-      }
+    if (index !== undefined) return false
 
-      this._heap.add({ page, time })
-      return true
-    } else {
-      this._heap.replace({ page, time }, index)
-      return false
+    if (this._heap.length >= this._capacity) {
+      this._heap.remove(0) // 删掉栈顶
     }
+    this._heap.add({ page, time })
+    return true
   }
 }
 
 const [time, min, max, maxLength] = [100, 0, 10, 50]
-test('LRU 算法', () => {
+test('FIFO 算法', () => {
   times(() => {
     const pages = genArray(min, max, maxLength)
     const capacity = 3
 
-    const lru = new LRU(capacity)
-    const lru2 = new Right(capacity)
+    const fifo = new FIFO(capacity)
+    const fifo2 = new Right(capacity)
 
     for (let i = 0; i < pages.length; ++i) {
-      lru.put(pages[i])
-      lru2.put(pages[i])
+      fifo.put(pages[i])
+      fifo2.put(pages[i])
 
       for (let j = 0; j <= i; ++j) {
         // console.log(lru.toArray(), lru['_size'], lru['_capacity'])
         // console.log(lru2['_heap'], lru2['_heap'].length, lru['_capacity'])
 
         // console.log('----------')
-        expect(lru.contain(pages[j])).toBe(lru2.contain(pages[j]))
+        expect(fifo.contain(pages[j])).toBe(fifo2.contain(pages[j]))
       }
     }
   }, time)

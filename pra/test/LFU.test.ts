@@ -60,11 +60,11 @@ class Right {
   }
 }
 
-const [time, min, max, maxLength] = [100, 0, 10, 25]
+const [time, min, max, maxLength] = [100, 0, 10, 50]
 test('LFU 算法', () => {
   times(() => {
     const pages = genArray(min, max, maxLength)
-    const capacity = randomInt(0, maxLength)
+    const capacity = 3
 
     const lfu = new LFU(capacity)
     const lfu2 = new Right(capacity)

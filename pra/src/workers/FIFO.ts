@@ -24,11 +24,10 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
  * 使用队列实现
  */
 export class FIFO<T> implements Strategy<T> {
-  // 页号数组
-  private _cache = new Set<T>()
-  private _head: any = {}
-  private _tail: any = {}
-  private _size = 0
+  private _cache = new Set<T>() // 加速查询
+  private _head: any = {} // 链表头节点
+  private _tail: any = {} // 链表尾节点
+  private _size = 0 // 链表大小
 
   constructor(private _capacity: number = 10) {
     this._head.next = this._tail
@@ -50,7 +49,7 @@ export class FIFO<T> implements Strategy<T> {
     }
 
     if (this._size >= this._capacity) {
-      // 删除头节点
+      //  内存中  -- 需要换出页面  --- 只需要删除头节点
       const first = this._head.next as Node<T>
       first.next.prev = this._head
       this._head.next = first.next

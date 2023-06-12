@@ -14,9 +14,6 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
   const startTime = Date.now()
 
   // index Map 记录每一页在未来请求序列中的下标
-  //
-  // 每个页面的第一次出现的位置永远不用用到, indices第一个位置`另作他用
-  //
   const indexMap = new Map<T, number[]>()
   req.pages.forEach((page, i) => {
     const indices = indexMap.get(page)
@@ -26,12 +23,15 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
       indexMap.set(page, [i])
     }
   })
+
+  // 每个页面的第一次出现的位置永远不用用到, 所以第一个位置`另作他用
   indexMap.forEach((indices) => {
     indices[0] = 1
-    indices.push(Infinity)
+    indices.push(Infinity) // Infinity 代表以后不会再有该页面出现了
   })
 
   if (req.capacity > 0) {
+    // 大根堆, 堆顶的是当前内存中 将是以后永不使用，或者在最长时间内不再被访问的页面
     const heapPlus = new HeapPlus<
       { page: T; lessRight: number; time: number },
       T
@@ -43,7 +43,7 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
       }
     )
 
-    let time = 0
+    let time = 0 // 模拟页面访问时间
 
     for (let i = 0; i < req.pages.length; ++i) {
       let swap: T | undefined
@@ -58,8 +58,8 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
         swap = undefined
         flag = true
 
-        // 是否需要换出
         if (heapPlus.length >= req.capacity) {
+          // 需要换出页面 --- 将堆顶元素换出,
           // O(log(Capacity))
           swap = heapPlus.remove(0).page
         }
@@ -67,6 +67,7 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
         // 寻找最近的
         heapPlus.add({ page, lessRight, time })
       } else {
+        // 存在该页面, 就更新该页面的下一次出现的位置
         heapPlus.replace({ page, lessRight, time }, index)
       }
 

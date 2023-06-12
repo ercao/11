@@ -1,3 +1,7 @@
+//
+// 对 Sqlite 数据库的相关操作
+//
+
 import sqlite3, { Database } from 'better-sqlite3'
 import { RequestType } from './utils.ts'
 import { ResponseType } from './utils.ts'
@@ -85,30 +89,21 @@ export function insertForRequest<T>(db: Database, record: RequestRowType<T>) {
   return res.lastInsertRowid
 }
 
-/**
- * 会并发,开启事务
- * @param db
- * @param record
- * @returns
- */
 export function insertForResponse<T>(db: Database, record: ResponseRowType<T>) {
-  const transaction = db.transaction(() => {
-    const res = db
-      .prepare(
-        `
+  const res = db
+    .prepare(
+      `
         insert into ${RESPONSE_TABLE_NAME}(name,request_id,with_quick,without_quick)
         values (@name,@request_id,@with_quick,@without_quick)
       `
-      )
-      .run(record)
+    )
+    .run(record)
 
-    if (res.changes < 1) {
-      throw new Error('insertForResponse faild')
-    }
+  if (res.changes < 1) {
+    throw new Error('insertForResponse faild')
+  }
 
-    return res.lastInsertRowid
-  })
-  return transaction()
+  return res.lastInsertRowid
 }
 
 export function getAllRequests<T>(db: Database): RequestType<T>[] {

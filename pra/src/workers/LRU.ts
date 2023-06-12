@@ -22,15 +22,14 @@ parentPort?.on('message', <T>(req: RequestType<T>) => {
 
 /**
  * HashMap 和 一条双向链表
+ * 访问时间是一个隐式属性
  */
 export class LRU<T> implements Strategy<T> {
-  private _cache = new Map<T, Node<T>>()
+  private _cache = new Map<T, Node<T>>() // 绑定页面与链表节点 --- 加速查询
 
-  private _head: any = {}
-  private _tail: any = {}
-  private _size = 0
-
-  private _time = 0
+  private _head: any = {} // 链表头节点
+  private _tail: any = {} // 链表尾节点
+  private _size = 0 // 链表节点数量
 
   constructor(private _capacity: number) {
     this._head.next = this._tail
@@ -56,25 +55,27 @@ export class LRU<T> implements Strategy<T> {
 
     let node = this._cache.get(page)
 
-    const time = this._time++
     if (!node) {
-      // 不存在添加
-      node = new Node(page, time, this._tail.prev, this._tail)
-      this._tail.prev.next = node
-      this._tail.prev = node
-      this._cache.set(page, node)
-      ++this._size
-
-      if (this._size > this._capacity) {
-        // 删除第一个元素
+      // 内存中不存在该页面的分支
+      if (this._size >= this._capacity) {
+        // 需要换出页面 --- 删除链表第一个节点
         const first = this._head.next as Node<T>
         this._cache.delete(first.page)
         first.next.prev = first.prev
         this._head.next = first.next
 
         swap = first.page
+      } else {
+        ++this._size
       }
+
+      // 在链表的尾部添加该页面
+      node = new Node(page, this._tail.prev, this._tail)
+      this._tail.prev.next = node
+      this._tail.prev = node
+      this._cache.set(page, node)
     } else {
+      // 存在该页面就将该页面节点移动到链表尾部
       flag = false
 
       // 从链表中删除该元素
@@ -86,7 +87,6 @@ export class LRU<T> implements Strategy<T> {
       node.prev = this._tail.prev
       this._tail.prev.next = node
       this._tail.prev = node
-      node.time = time
     }
 
     return { swap, flag }
@@ -107,8 +107,8 @@ export class LRU<T> implements Strategy<T> {
 
 class Node<T> {
   constructor(
+    //
     public page: T,
-    public time: number,
     public prev: Node<T>,
     public next: Node<T>
   ) {}

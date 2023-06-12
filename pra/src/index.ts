@@ -19,8 +19,6 @@ import {
   insertForResponse,
 } from './db.ts'
 import { program, Option } from 'commander'
-import { range, times } from 'moderndash'
-import { Table } from 'console-table-printer'
 
 const db = createDB('pra.db')
 
@@ -114,13 +112,13 @@ function runTask(
                 console.log('有快表模式访问时间: ', hasQTTime)
                 console.log('无快表模式访问时间: ', nonQTTime)
 
-                //   console.table(
-                //     res.map((line) => ({
-                //       请求页: line.request,
-                //       ...line.pages,
-                //       是否缺页: line.swap !== undefined,
-                //     }))
-                //   )
+                console.table(
+                  res.map((line) => ({
+                    请求页: line.request,
+                    ...line.pages,
+                    是否缺页: line.swap !== undefined,
+                  }))
+                )
               }
               console.log()
 
