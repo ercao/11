@@ -1,9 +1,7 @@
-import { randomInt } from 'crypto'
 import { times } from 'moderndash'
 import { HeapPlus } from 'src/HeapPlus.ts'
 import { compare, genArray } from 'src/utils.ts'
 import { FIFO } from 'src/workers/FIFO.ts'
-import { LRU } from 'src/workers/LRU.ts'
 
 /** 使用加强堆 */
 class Right {

@@ -29,11 +29,10 @@ function runTask(
   capacity: number
 ) {
   // 随机生成
-  const pages = genArray(min, max, maxLength)
-
+  // const pages = genArray(min, max, maxLength)
   // const pages = times(() => randomInt(min, max + 1), maxLength + 1)
-  // const pages = [8, 1, 2, 3, 1, 4, 1, 5, 3, 4, 1, 4, 3, 2, 3, 1, 2, 8, 1, 2]
-  // const capacity = 3
+  const pages = [8, 1, 2, 3, 1, 4, 1, 5, 3, 4, 1, 4, 3, 2, 3, 1, 2, 8, 1, 2]
+  capacity = 3
 
   // 插入一条记录
   const requestId = insertForRequest(db, {
@@ -90,9 +89,9 @@ function runTask(
                 without_quick: nonQTTime,
               })
 
-              // console.log('')
+              console.log('')
 
-              // console.log(name)
+              console.log(name)
 
               if (res.length > 0) {
                 console.log(

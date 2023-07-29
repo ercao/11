@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(company-ms VERSION 0.1.0)
 
-
 add_executable(company-ms
   ./src/connection.cc
   ./src/department-dao.cc
@@ -18,11 +17,9 @@ add_executable(company-ms
 )
 
 target_include_directories(company-ms
-    PRIVATE
-        ${PROJECT_SOURCE_DIR}/include
+    PRIVATE ${PROJECT_SOURCE_DIR}/include
 )
 
-target_link_libraries(company-ms
-    mysqlcppconn8
-)
+target_link_libraries(company-ms mysqlcppconn8)
 
+install(TARGETS company-ms)
