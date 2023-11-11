@@ -1,0 +1,1090 @@
+[
+  {
+    "title": "燕山大学(东校区)",
+    "uid": "f696f3c23b2c70961a11d58c",
+    "point": {
+      "lng": 119.546011,
+      "lat": 39.913048
+    },
+    "pointN": {
+      "lng": 119.546011,
+      "lat": 39.913048,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Df696f3c23b2c70961a11d58c%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=f696f3c23b2c70961a11d58c&output=html&source=jsapi",
+    "address": "河北省秦皇岛市河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)8057100",
+    "type": 0,
+    "isAccurate": true,
+    "tags": [
+      "教育",
+      "高等教育",
+      "高等专科学校"
+    ]
+  },
+  {
+    "title": "燕山大学(西校区)",
+    "uid": "f0ead25e345b91c249fc8dcd",
+    "point": {
+      "lng": 119.530532,
+      "lat": 39.91727
+    },
+    "pointN": {
+      "lng": 119.530532,
+      "lat": 39.91727,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Df0ead25e345b91c249fc8dcd%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=f0ead25e345b91c249fc8dcd&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)8063745",
+    "type": 0,
+    "isAccurate": true
+  },
+  {
+    "title": "燕山大学-里仁学院",
+    "uid": "3a0a78bd3ee908fa62180986",
+    "point": {
+      "lng": 119.533446,
+      "lat": 39.912483
+    },
+    "pointN": {
+      "lng": 119.533446,
+      "lat": 39.912483,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D3a0a78bd3ee908fa62180986%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=3a0a78bd3ee908fa62180986&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)8063745",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育",
+      "高等教育",
+      "高等专科学校"
+    ]
+  },
+  {
+    "title": "燕山大学",
+    "uid": "b742004537af5d742b11d195",
+    "point": {
+      "lng": 119.549409,
+      "lat": 39.909923
+    },
+    "pointN": {
+      "lng": 119.549409,
+      "lat": 39.909923,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Db742004537af5d742b11d195%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=b742004537af5d742b11d195&output=html&source=jsapi",
+    "address": "微3路",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 1,
+    "isAccurate": false,
+    "tags": [
+      "交通设施",
+      "公交车站",
+      "公交车站主点"
+    ]
+  },
+  {
+    "title": "燕山大学",
+    "uid": "2f5832937ba0a689118824f6",
+    "point": {
+      "lng": 119.54795,
+      "lat": 39.909157
+    },
+    "pointN": {
+      "lng": 119.54795,
+      "lat": 39.909157,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D2f5832937ba0a689118824f6%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=2f5832937ba0a689118824f6&output=html&source=jsapi",
+    "address": "6路; 12路; 32路; 34路; 39路; 903路; 903路附线; 定制公交4路; 微3路",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 1,
+    "isAccurate": false,
+    "tags": [
+      "交通设施",
+      "公交车站",
+      "公交车站主点"
+    ]
+  },
+  {
+    "title": "燕山大学(东校区)-1号门",
+    "uid": "cba9e459b6745923cc06a4b3",
+    "point": {
+      "lng": 119.546957,
+      "lat": 39.908736
+    },
+    "pointN": {
+      "lng": 119.546957,
+      "lat": 39.908736,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dcba9e459b6745923cc06a4b3%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=cba9e459b6745923cc06a4b3&output=html&source=jsapi",
+    "address": "秦皇岛市海港区经济技术开发区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育",
+      "高等教育"
+    ]
+  },
+  {
+    "title": "燕山大学",
+    "uid": "f4ffd36c3f3cdd44ad080fdb",
+    "point": {
+      "lng": 119.548388,
+      "lat": 39.909177
+    },
+    "pointN": {
+      "lng": 119.548388,
+      "lat": 39.909177,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Df4ffd36c3f3cdd44ad080fdb%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=f4ffd36c3f3cdd44ad080fdb&output=html&source=jsapi",
+    "address": "6路; 12路; 32路; 34路; 39路; 903路; 903路附线; 北戴河机场巴士; 定制公交4路",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 1,
+    "isAccurate": false,
+    "tags": [
+      "交通设施",
+      "公交车站",
+      "公交车站主点"
+    ]
+  },
+  {
+    "title": "燕山大学",
+    "uid": "2852f4e8c729ef1d213bf24c",
+    "point": {
+      "lng": 119.548234,
+      "lat": 39.909207
+    },
+    "pointN": {
+      "lng": 119.548234,
+      "lat": 39.909207,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D2852f4e8c729ef1d213bf24c%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=2852f4e8c729ef1d213bf24c&output=html&source=jsapi",
+    "address": "6路; 12路; 32路; 34路; 39路; 903路; 903路附线; 北戴河机场巴士; 定制公交4路; 微3路",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 1,
+    "isAccurate": false,
+    "tags": [
+      "交通设施",
+      "公交车站",
+      "公交车站主点"
+    ]
+  },
+  {
+    "title": "燕山大学(东校区)-4号门",
+    "uid": "ee960a88e5d38bc42b3a9fad",
+    "point": {
+      "lng": 119.544117,
+      "lat": 39.91586
+    },
+    "pointN": {
+      "lng": 119.544117,
+      "lat": 39.91586,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dee960a88e5d38bc42b3a9fad%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=ee960a88e5d38bc42b3a9fad&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-7号门",
+    "uid": "59ecbb0906d1b979266e983d",
+    "point": {
+      "lng": 119.530607,
+      "lat": 39.910463
+    },
+    "pointN": {
+      "lng": 119.530607,
+      "lat": 39.910463,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D59ecbb0906d1b979266e983d%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=59ecbb0906d1b979266e983d&output=html&source=jsapi",
+    "address": "秦皇岛市海港区山东堡路燕山大学-里仁学院",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学科技园",
+    "uid": "67fde143a1fa26599222e0a4",
+    "point": {
+      "lng": 119.54869,
+      "lat": 39.944571
+    },
+    "pointN": {
+      "lng": 119.54869,
+      "lat": 39.944571,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D67fde143a1fa26599222e0a4%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=67fde143a1fa26599222e0a4&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区黄河道街道渭水道4",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-2号门",
+    "uid": "1e26e0d7ab7c9427f82213d3",
+    "point": {
+      "lng": 119.549083,
+      "lat": 39.910685
+    },
+    "pointN": {
+      "lng": 119.549083,
+      "lat": 39.910685,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D1e26e0d7ab7c9427f82213d3%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=1e26e0d7ab7c9427f82213d3&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段-438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "奥阑酒店(秦皇岛燕山大学店)",
+    "uid": "bd97841bd9d5c40da7c75606",
+    "point": {
+      "lng": 119.537514,
+      "lat": 39.928061
+    },
+    "pointN": {
+      "lng": 119.537514,
+      "lat": 39.928061,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dbd97841bd9d5c40da7c75606%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=bd97841bd9d5c40da7c75606&output=html&source=jsapi",
+    "address": "秦皇岛市经济技术开发区祁连山南路升达置地广场11号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)5918999",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "宾馆"
+    ]
+  },
+  {
+    "title": "燕山大学学生工作处",
+    "uid": "4332b9305efa38114354d710",
+    "point": {
+      "lng": 119.545639,
+      "lat": 39.910736
+    },
+    "pointN": {
+      "lng": 119.545639,
+      "lat": 39.910736,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D4332b9305efa38114354d710%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=4332b9305efa38114354d710&output=html&source=jsapi",
+    "address": "秦皇岛市海港区燕中路燕山大学(东校区)",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学信息学院",
+    "uid": "e289f9b1ccd54b1af50e77c1",
+    "point": {
+      "lng": 119.526942,
+      "lat": 39.923759
+    },
+    "pointN": {
+      "lng": 119.526942,
+      "lat": 39.923759,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3De289f9b1ccd54b1af50e77c1%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=e289f9b1ccd54b1af50e77c1&output=html&source=jsapi",
+    "address": "秦皇岛市海港区长江西道燕山大学(西校区)",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "秦皇岛燕山大学店",
+    "uid": "5c3284b75f43933000ff2dd1",
+    "point": {
+      "lng": 119.541602,
+      "lat": 39.904922
+    },
+    "pointN": {
+      "lng": 119.541602,
+      "lat": 39.904922,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D5c3284b75f43933000ff2dd1%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=5c3284b75f43933000ff2dd1&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区西港镇河北大街530",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-继续教育学院",
+    "uid": "1660438a233a3fb943e1928b",
+    "point": {
+      "lng": 119.526396,
+      "lat": 39.920114
+    },
+    "pointN": {
+      "lng": 119.526396,
+      "lat": 39.920114,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D1660438a233a3fb943e1928b%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=1660438a233a3fb943e1928b&output=html&source=jsapi",
+    "address": "河北大街西段438号燕山大学",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)8074680",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学东校区-至理楼",
+    "uid": "c37e59b229ffba915bf6be5a",
+    "point": {
+      "lng": 119.542661,
+      "lat": 39.907479
+    },
+    "pointN": {
+      "lng": 119.542661,
+      "lat": 39.907479,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dc37e59b229ffba915bf6be5a%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=c37e59b229ffba915bf6be5a&output=html&source=jsapi",
+    "address": "河北大街西段438号燕山大学东校区至理楼",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大街",
+    "uid": "58918b290c19ca50a3d23028",
+    "point": {
+      "lng": 119.597094,
+      "lat": 39.959709
+    },
+    "pointN": {
+      "lng": 119.597094,
+      "lat": 39.959709,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D58918b290c19ca50a3d23028%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=58918b290c19ca50a3d23028&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "道路"
+    ]
+  },
+  {
+    "title": "燕大/燕山大学",
+    "uid": "25023ac4cf9332b342d63ef4",
+    "point": {
+      "lng": 119.540366,
+      "lat": 39.916004
+    },
+    "pointN": {
+      "lng": 119.540366,
+      "lat": 39.916004,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D25023ac4cf9332b342d63ef4%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=25023ac4cf9332b342d63ef4&output=html&source=jsapi",
+    "address": "海港区",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学西校区-5号门",
+    "uid": "820aa638d8ebd939a8059d88",
+    "point": {
+      "lng": 119.542288,
+      "lat": 39.917247
+    },
+    "pointN": {
+      "lng": 119.542288,
+      "lat": 39.917247,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D820aa638d8ebd939a8059d88%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=820aa638d8ebd939a8059d88&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区西港镇天山南路",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-机械学院",
+    "uid": "5c437704a8f7f21e38221ccb",
+    "point": {
+      "lng": 119.544722,
+      "lat": 39.91147
+    },
+    "pointN": {
+      "lng": 119.544722,
+      "lat": 39.91147,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D5c437704a8f7f21e38221ccb%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=5c437704a8f7f21e38221ccb&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-理学院",
+    "uid": "e141edfdb503b2983b221cd6",
+    "point": {
+      "lng": 119.529129,
+      "lat": 39.923919
+    },
+    "pointN": {
+      "lng": 119.529129,
+      "lat": 39.923919,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3De141edfdb503b2983b221cd6%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=e141edfdb503b2983b221cd6&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区天山南路燕山大学(西校区)",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-第四教学楼",
+    "uid": "9e704f19c60fb8a396ca0700",
+    "point": {
+      "lng": 119.545728,
+      "lat": 39.915268
+    },
+    "pointN": {
+      "lng": 119.545728,
+      "lat": 39.915268,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D9e704f19c60fb8a396ca0700%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=9e704f19c60fb8a396ca0700&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学-第三教学楼",
+    "uid": "84a01a0f7b0dec36a8059db1",
+    "point": {
+      "lng": 119.544346,
+      "lat": 39.909962
+    },
+    "pointN": {
+      "lng": 119.544346,
+      "lat": 39.909962,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D84a01a0f7b0dec36a8059db1%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=84a01a0f7b0dec36a8059db1&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学东校区(4号门)",
+    "uid": "3445a219fd308c2d2cb96d3a",
+    "point": {
+      "lng": 119.544183,
+      "lat": 39.915874
+    },
+    "pointN": {
+      "lng": 119.544183,
+      "lat": 39.915874,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D3445a219fd308c2d2cb96d3a%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=3445a219fd308c2d2cb96d3a&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区西港镇G205(山深线)",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-3号门",
+    "uid": "c89b40b5a618be6eb1077db2",
+    "point": {
+      "lng": 119.546434,
+      "lat": 39.915375
+    },
+    "pointN": {
+      "lng": 119.546434,
+      "lat": 39.915375,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dc89b40b5a618be6eb1077db2%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=c89b40b5a618be6eb1077db2&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区求索路燕大小区北门南侧",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学(东校区)-东北门",
+    "uid": "16c01be5a5ee8f542fb908db",
+    "point": {
+      "lng": 119.550427,
+      "lat": 39.917778
+    },
+    "pointN": {
+      "lng": 119.550427,
+      "lat": 39.917778,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D16c01be5a5ee8f542fb908db%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=16c01be5a5ee8f542fb908db&output=html&source=jsapi",
+    "address": "河北省秦皇岛市河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕大小吃街",
+    "uid": "eef7566810224afdd8eced82",
+    "point": {
+      "lng": 119.549488,
+      "lat": 39.90908
+    },
+    "pointN": {
+      "lng": 119.549488,
+      "lat": 39.90908,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Deef7566810224afdd8eced82%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=eef7566810224afdd8eced82&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段南侧",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "13311583518",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学东校区-建工学院",
+    "uid": "9cc43915e472f97a4f3a59fc",
+    "point": {
+      "lng": 119.547353,
+      "lat": 39.911177
+    },
+    "pointN": {
+      "lng": 119.547353,
+      "lat": 39.911177,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D9cc43915e472f97a4f3a59fc%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=9cc43915e472f97a4f3a59fc&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学-经济管理学院",
+    "uid": "c739a2321ecd1a35d92f2857",
+    "point": {
+      "lng": 119.527761,
+      "lat": 39.920828
+    },
+    "pointN": {
+      "lng": 119.527761,
+      "lat": 39.920828,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dc739a2321ecd1a35d92f2857%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=c739a2321ecd1a35d92f2857&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "汉庭酒店(秦皇岛燕山大学店)",
+    "uid": "9dcdb3261996804201294f60",
+    "point": {
+      "lng": 119.536462,
+      "lat": 39.929029
+    },
+    "pointN": {
+      "lng": 119.536462,
+      "lat": 39.929029,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D9dcdb3261996804201294f60%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=9dcdb3261996804201294f60&output=html&source=jsapi",
+    "address": "秦皇岛市海港区祁连山南路升达置地广场12号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)5811999",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "宾馆"
+    ]
+  },
+  {
+    "title": "燕山大学国家大学科技园(海港园区)",
+    "uid": "587bece3b99e7dd914948e83",
+    "point": {
+      "lng": 119.573543,
+      "lat": 39.939743
+    },
+    "pointN": {
+      "lng": 119.573543,
+      "lat": 39.939743,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D587bece3b99e7dd914948e83%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=587bece3b99e7dd914948e83&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区和平大街333号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)8511556",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-体育系",
+    "uid": "72a2558774f7b4972dfaa7dc",
+    "point": {
+      "lng": 119.546542,
+      "lat": 39.916873
+    },
+    "pointN": {
+      "lng": 119.546542,
+      "lat": 39.916873,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D72a2558774f7b4972dfaa7dc%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=72a2558774f7b4972dfaa7dc&output=html&source=jsapi",
+    "address": "秦皇岛市海港区河北大街西段438号燕山大学",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学图书馆(西区)",
+    "uid": "82e241a5fb8ad66bb54f5457",
+    "point": {
+      "lng": 119.539662,
+      "lat": 39.916316
+    },
+    "pointN": {
+      "lng": 119.539662,
+      "lat": 39.916316,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D82e241a5fb8ad66bb54f5457%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=82e241a5fb8ad66bb54f5457&output=html&source=jsapi",
+    "address": "秦皇岛市海港区天山南路燕山大学(西校区)",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学MBA教育中心",
+    "uid": "d03110bfecbb958da0acc42f",
+    "point": {
+      "lng": 119.527759,
+      "lat": 39.920826
+    },
+    "pointN": {
+      "lng": 119.527759,
+      "lat": 39.920826,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dd03110bfecbb958da0acc42f%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=d03110bfecbb958da0acc42f&output=html&source=jsapi",
+    "address": "秦皇岛市海港区燕山大学(西校区)",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学西校区-里仁教学楼",
+    "uid": "a3d5192eed41db7872210b6f",
+    "point": {
+      "lng": 119.532975,
+      "lat": 39.912763
+    },
+    "pointN": {
+      "lng": 119.532975,
+      "lat": 39.912763,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Da3d5192eed41db7872210b6f%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=a3d5192eed41db7872210b6f&output=html&source=jsapi",
+    "address": "河北秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学-文法学院",
+    "uid": "4c2943decc22a8e65d17c3ec",
+    "point": {
+      "lng": 119.54557,
+      "lat": 39.916209
+    },
+    "pointN": {
+      "lng": 119.54557,
+      "lat": 39.916209,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D4c2943decc22a8e65d17c3ec%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=4c2943decc22a8e65d17c3ec&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "教育"
+    ]
+  },
+  {
+    "title": "燕山大学-广播站",
+    "uid": "93fbe5acc10cdbdcf423105c",
+    "point": {
+      "lng": 119.544665,
+      "lat": 39.908574
+    },
+    "pointN": {
+      "lng": 119.544665,
+      "lat": 39.908574,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D93fbe5acc10cdbdcf423105c%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=93fbe5acc10cdbdcf423105c&output=html&source=jsapi",
+    "address": "海港区河北大街西段438号燕山大学",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "大门凤火锅鸡(燕山大学)",
+    "uid": "2fd77acec896e7339e9d6853",
+    "point": {
+      "lng": 119.551348,
+      "lat": 39.910858
+    },
+    "pointN": {
+      "lng": 119.551348,
+      "lat": 39.910858,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D2fd77acec896e7339e9d6853%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=2fd77acec896e7339e9d6853&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段-136号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "16603321331",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学西校区-西区第五教学楼",
+    "uid": "49bef0036cb8f625970319bb",
+    "point": {
+      "lng": 119.527839,
+      "lat": 39.920973
+    },
+    "pointN": {
+      "lng": 119.527839,
+      "lat": 39.920973,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D49bef0036cb8f625970319bb%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=49bef0036cb8f625970319bb&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区西港镇西环南路181号之4号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-信息科学与工程学院(软件学院)",
+    "uid": "329d2fdc0d6fd8a0b21e3612",
+    "point": {
+      "lng": 119.52695,
+      "lat": 39.923753
+    },
+    "pointN": {
+      "lng": 119.52695,
+      "lat": 39.923753,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D329d2fdc0d6fd8a0b21e3612%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=329d2fdc0d6fd8a0b21e3612&output=html&source=jsapi",
+    "address": "河北省秦皇岛市河海港区河北大街西段438号燕山大学西校区",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-体育馆",
+    "uid": "34059f978ddb8f5470455b86",
+    "point": {
+      "lng": 119.546235,
+      "lat": 39.917023
+    },
+    "pointN": {
+      "lng": 119.546235,
+      "lat": 39.917023,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D34059f978ddb8f5470455b86%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=34059f978ddb8f5470455b86&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "休闲娱乐",
+      "体育场馆"
+    ]
+  },
+  {
+    "title": "燕山大学-行政楼",
+    "uid": "345e7466160553be6140a991",
+    "point": {
+      "lng": 119.531694,
+      "lat": 39.912601
+    },
+    "pointN": {
+      "lng": 119.531694,
+      "lat": 39.912601,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D345e7466160553be6140a991%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=345e7466160553be6140a991&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "锦江之星酒店(秦皇岛燕山大学店)",
+    "uid": "da63590e02fc4ca2eb1e974b",
+    "point": {
+      "lng": 119.53746,
+      "lat": 39.928109
+    },
+    "pointN": {
+      "lng": 119.53746,
+      "lat": 39.928109,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Dda63590e02fc4ca2eb1e974b%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=da63590e02fc4ca2eb1e974b&output=html&source=jsapi",
+    "address": "秦皇岛市海港区置地广场11号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)3968666",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学-燕大驾校",
+    "uid": "e03c3aba228c22cf71210bb1",
+    "point": {
+      "lng": 119.526469,
+      "lat": 39.924285
+    },
+    "pointN": {
+      "lng": 119.526469,
+      "lat": 39.924285,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3De03c3aba228c22cf71210bb1%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=e03c3aba228c22cf71210bb1&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区长江西道与天山南路交叉口西南方向约320米",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)6880115,(0335)8074088",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "秦皇岛燕大汽车零部件制造有限公司",
+    "uid": "72e57fd7c93eb0aff9dc85b1",
+    "point": {
+      "lng": 119.547528,
+      "lat": 39.947765
+    },
+    "pointN": {
+      "lng": 119.547528,
+      "lat": 39.947765,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D72e57fd7c93eb0aff9dc85b1%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=72e57fd7c93eb0aff9dc85b1&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区雪山路6号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "phoneNumber": "(0335)8501625",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "公司企业",
+      "厂矿"
+    ]
+  },
+  {
+    "title": "燕山大学-档案馆",
+    "uid": "dab04d52650ffcd1354aae95",
+    "point": {
+      "lng": 119.545623,
+      "lat": 39.91608
+    },
+    "pointN": {
+      "lng": 119.545623,
+      "lat": 39.91608,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3Ddab04d52650ffcd1354aae95%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=dab04d52650ffcd1354aae95&output=html&source=jsapi",
+    "address": "秦皇岛市海港区求学路燕大小区北门西北侧约100米",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕山大学东区第一教学楼",
+    "uid": "5f22d573514e5250246e9821",
+    "point": {
+      "lng": 119.545094,
+      "lat": 39.911169
+    },
+    "pointN": {
+      "lng": 119.545094,
+      "lat": 39.911169,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D5f22d573514e5250246e9821%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=5f22d573514e5250246e9821&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false
+  },
+  {
+    "title": "燕大小区",
+    "uid": "9cb08c2f3d7f70dcc8213daf",
+    "point": {
+      "lng": 119.548839,
+      "lat": 39.914912
+    },
+    "pointN": {
+      "lng": 119.548839,
+      "lat": 39.914912,
+      "of": "inner"
+    },
+    "url": "http://map.baidu.com/?s=inf%26uid%3D9cb08c2f3d7f70dcc8213daf%26c%3D148&i=0&sr=1",
+    "detailUrl": "http://api.map.baidu.com/place/detail?uid=9cb08c2f3d7f70dcc8213daf&output=html&source=jsapi",
+    "address": "河北省秦皇岛市海港区燕山大学东校区河北大街西段438号",
+    "city": "秦皇岛市",
+    "province": "河北省",
+    "type": 0,
+    "isAccurate": false,
+    "tags": [
+      "地产小区",
+      "小区/楼盘"
+    ]
+  }
+]
