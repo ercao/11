@@ -70,7 +70,7 @@ impl Token {
   }
 }
 
-impl<'a> Display for Token {
+impl Display for Token {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
     f.write_str(match self {
       Token::Illegal => "unknown",

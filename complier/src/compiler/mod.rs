@@ -301,6 +301,12 @@ impl Compiler {
   }
 }
 
+impl Default for Compiler {
+  fn default() -> Self {
+    Self::new()
+  }
+}
+
 #[cfg(test)]
 mod tests {
   use crate::{ast::AstNode, compiler::Compiler, paser::Paser, vm::VM};

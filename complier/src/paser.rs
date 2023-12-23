@@ -331,7 +331,6 @@ impl<'a> Paser<'a> {
           break;
         }
       }
-    } else {
     }
 
     self.expect(close_token);

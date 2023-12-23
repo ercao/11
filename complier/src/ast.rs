@@ -13,14 +13,13 @@ pub struct Program {
 
 impl AstNode for Program {
   fn unparse(&self) -> String {
-    format!("{:}", self.statements.unparse())
+    self.statements.unparse()
   }
 }
 
 #[derive(Debug)]
 pub struct Statement {
   pub pos: SpanOffset,
-
   pub kind: StatementKind,
 }
 
@@ -34,7 +33,7 @@ pub struct Identifier {
 
 impl AstNode for Identifier {
   fn unparse(&self) -> String {
-    format!("{:}", self.name)
+    self.name.clone()
   }
 }
 
@@ -52,14 +51,14 @@ pub enum StatementKind {
 
 impl AstNode for [Statement] {
   fn unparse(&self) -> String {
-    format!("{:}", self.iter().map(AstNode::unparse).collect::<Vec<_>>().join(" "))
+    self.iter().map(AstNode::unparse).collect::<Vec<_>>().join(" ")
   }
 }
 
 impl AstNode for Statement {
   fn unparse(&self) -> String {
     match &self.kind {
-      StatementKind::Empty => format!(";"),
+      StatementKind::Empty => ";".to_string(),
       StatementKind::Const(c) => format!(
         "const {};",
         c.iter().map(|(a, b)| format!("{} = {}", a.unparse(), b.unparse())).collect::<Vec<_>>().join(", ")
@@ -79,8 +78,9 @@ impl AstNode for Statement {
       }
 
       StatementKind::Assign(ident, expression) => format!("{} = {};", ident.unparse(), expression.unparse()),
+
       StatementKind::Return(Some(e)) => format!("return {:};", e.unparse()),
-      StatementKind::Return(None) => format!("return;"),
+      StatementKind::Return(None) => "return;".to_string(),
       StatementKind::Expression(e) => format!("{};", e.unparse()),
     }
   }
@@ -97,9 +97,11 @@ pub struct Expression {
 impl AstNode for Expression {
   fn unparse(&self) -> String {
     match &self.kind {
-      ExpressionKind::Identifier(x) => format!("{:}", x),
+      ExpressionKind::Identifier(x) => x.to_string(),
       ExpressionKind::Integer(x) => format!("{:}", x),
-      ExpressionKind::Infix(infix, left, right) => format!("({:} {:} {:})", left.unparse(), infix, right.unparse()),
+      ExpressionKind::Infix(infix, left, right) => {
+        format!("({:} {:} {:})", left.unparse(), infix, right.unparse())
+      }
       ExpressionKind::Prefix(prefix, e) => format!("({:}{:})", prefix, e.unparse()),
       ExpressionKind::Call(ident, args) => {
         format!("{:}({:})", ident.unparse(), args.iter().map(|kind| kind.unparse()).collect::<Vec<_>>().join(", "),)
